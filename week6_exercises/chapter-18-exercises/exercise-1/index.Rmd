@@ -1,0 +1,43 @@
+---
+title: "Lecture_6-1_Demo"
+author: "Larry"
+date: "2/11/2020"
+output: html_document
+---
+
+## This is my report!
+
+I like writing reports
+
+
+
+```{r setup, include=F}
+library(knitr)source("exercise.R")  # load exercise file
+```
+ 
+
+```{r example, echo = FALSE}
+library(knitr)
+numbers <- runif(1:100) # make a randpm numbers
+
+hist(numbers) # show histogram of numbers
+numbers_mean <- mean(numbers) # get the mean
+
+img_url <- "![Avengers](https://images-na.ssl-images-amazon.com/images/I/81gCaSnFTvL._SL1364_.jpg)"
+
+letters <- c("a", "b", "c", "d")
+numbers <- 1:4
+df <- data.frame(letters = letters, numbers = numbers)
+
+kable(df) # This will make a table 
+```
+
+The mean of the numbers happens to be **`r numbers_mean`**
+
+`r img_url`
+
+
+
+```{r other_chunk, include = FALSE}
+print(numbers)
+```
